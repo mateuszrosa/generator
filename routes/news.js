@@ -6,7 +6,7 @@ const News = require("../models/news");
 router.get("/", function (req, res, next) {
   const search = req.query.search || "";
 
-  const findNews = News.find({ title: new RegExp(search.trim(), "i") }).sort({
+  const findNews = News.find().sort({
     date: -1,
   });
 
